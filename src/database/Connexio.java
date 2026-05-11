@@ -9,7 +9,7 @@ public class Connexio {
     private static final String USER = "root";
     private static final String PASSWORD = ""; 
 
-    public static Connection conectar() {
+    public static Connection connectar() {
         Connection conexion = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
