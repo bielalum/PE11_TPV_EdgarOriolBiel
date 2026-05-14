@@ -10,14 +10,14 @@ public class Connexio {
     private static final String PASSWORD = ""; 
 
     public static Connection connectar() {
-        Connection conexion = null;
+        Connection connexio = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection(URL, USER, PASSWORD);
+            connexio = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connexió establerta!");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error en la connexió: " + e.getMessage());
         }
-        return conexion;
+        return connexio;
     }
 }
