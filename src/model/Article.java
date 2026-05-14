@@ -2,13 +2,15 @@ package model;
 public abstract class Article {
     protected int id;
     protected String nom;
-    protected double preu;
+    protected double preuBase;
+    protected int iva;
     protected int stock;
 
-    public Article(int id, String nom, double preu, int stock){
+    public Article(int id, String nom, double preuBase, int iva, int stock){
         this.id = id;
         this.nom = nom;
-        this.preu = preu;
+        this.preuBase = preuBase;
+        this.iva = iva;
         this.stock = stock;
     }
 
@@ -32,12 +34,22 @@ public abstract class Article {
 
 
 
-    public double getPreu(){
-        return preu;
+    public double getPreuBase(){
+        return preuBase;
     }
 
-    public void setPreu(double preu){
-        this.preu = preu;
+    public void setPreuBase(double preuBase){
+        this.preuBase = preuBase;
+    }
+
+
+
+    public int getIva(){
+        return iva;
+    }
+
+    public void setIva(int iva){
+        this.iva = iva;
     }
 
 
@@ -49,4 +61,7 @@ public abstract class Article {
     public void setStock(int stock){
         this.stock = stock;
     }
+
+    @Override
+    public abstract String toString();
 }
