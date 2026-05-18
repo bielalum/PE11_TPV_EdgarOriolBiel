@@ -16,7 +16,7 @@ public class DBArticles {
     //MÈTODE PER GUARDAR UN ARTICLE A LA BASE DE DADES
     public static void insertar(Article articlePerGuardar) {
 
-        String consultaSql = "INSERT INTO articles (nom, familia, talla_coll, llargada_camal, talla_cintura, amplada_pit, preu_base, iva, stock) VALUES (?,?,?,?,?,?,?,?,?)";
+        String consultaSql = "INSERT INTO articles (nom, id_tipus, talla_coll, llargada_camal, talla_cintura, amplada_pit, preu_base, iva, stock) VALUES (?,?,?,?,?,?,?,?,?)";
 
         try (Connection connexioBaseDades = Connexio.connectar(); 
              PreparedStatement sentenciaPreparada = connexioBaseDades.prepareStatement(consultaSql)) {
@@ -28,7 +28,7 @@ public class DBArticles {
 
             if (articlePerGuardar instanceof Camisa) {
                 Camisa camisaAuxiliar = (Camisa) articlePerGuardar;
-                sentenciaPreparada.setString(2, "Camisa");
+                sentenciaPreparada.setInt(2, 1); //Aquí fem una modificació, ara 1 representa "Camisa"
                 sentenciaPreparada.setInt(3, camisaAuxiliar.getTallaColl());
                 sentenciaPreparada.setNull(4, Types.INTEGER); //Aquí aniria la llargada_camal, en aquest cas la deixem com a null
                 sentenciaPreparada.setNull(5, Types.INTEGER); //Aquí aniria la talla_cintura, en aquest cas la deixem com a null
@@ -36,7 +36,7 @@ public class DBArticles {
             } 
             else if (articlePerGuardar instanceof Pantalo) {
                 Pantalo pantaloAuxiliar = (Pantalo) articlePerGuardar;
-                sentenciaPreparada.setString(2, "Pantalo");
+                sentenciaPreparada.setInt(2, 2); //Aquí fem una modificació, ara 1 representa "Camisa"
                 sentenciaPreparada.setNull(3, Types.INTEGER); //Aquí aniria la talla_coll en aquest cas la deixem com a null
                 sentenciaPreparada.setInt(4, pantaloAuxiliar.getLlargadaCamal());
                 sentenciaPreparada.setInt(5, pantaloAuxiliar.getTallaCintura());
@@ -61,7 +61,7 @@ public class DBArticles {
              ResultSet resultatConsulta = sentenciaPreparada.executeQuery()) {
 
             while (resultatConsulta.next()) {
-                String familia = resultatConsulta.getString("familia");
+                int idTipus = resultatConsulta.getInt("id_tipus"); //Canviem familia per id_tipus de (String a Int)
                 
                 int id = resultatConsulta.getInt("id");
                 String nom = resultatConsulta.getString("nom");
@@ -69,12 +69,12 @@ public class DBArticles {
                 int iva = resultatConsulta.getInt("iva");
                 int stock = resultatConsulta.getInt("stock");
 
-                if ("Camisa".equalsIgnoreCase(familia)) {
+                if (idTipus == 1) { //Apliquem els canvis aquí també
                     int tallaColl = resultatConsulta.getInt("talla_coll");
                     int ampladaPit = resultatConsulta.getInt("amplada_pit");
                     llistaArticles.add(new Camisa(id, nom, preuBase, iva, stock, tallaColl, ampladaPit));
                 } 
-                else {
+                else if (idTipus == 2) { //Apliquem els canvis aquí també
                     int tallaCintura = resultatConsulta.getInt("talla_cintura");
                     int llargadaCamal = resultatConsulta.getInt("llargada_camal");
                     llistaArticles.add(new Pantalo(id, nom, preuBase, iva, stock, tallaCintura, llargadaCamal));
