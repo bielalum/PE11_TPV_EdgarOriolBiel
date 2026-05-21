@@ -14,7 +14,7 @@ public class Connexio {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connexio = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Connexió establerta!");
+            System.out.println("Connexió amb la BD establerta!");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error en la connexió: " + e.getMessage());
         }
