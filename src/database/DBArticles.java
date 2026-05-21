@@ -47,7 +47,7 @@ public class DBArticles {
             System.out.println("Article guardat a la base de dades.");
 
         } catch (SQLException errorSql) {
-            System.out.println("ERROR: No s'ha pogut guardar l'article");
+            System.out.println("ERROR: No s'ha pogut guardar l'article a la base de dades.");
         }
     }
 

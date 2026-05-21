@@ -14,5 +14,9 @@ public class Main {
         System.out.println("Objectes creats:");
         System.out.println("Camisa: " + novaCamisa.getNom() + " (Talla coll: " + novaCamisa.getTallaColl() + ", Talla pit: " + novaCamisa.getAmpladaPit() + ")");
         System.out.println("Pantalo: " + nouPantalo.getNom() + " (Talla cintura: " + nouPantalo.getTallaCintura() + ", Talla camal: " + nouPantalo.getLlargadaCamal() + ")");
+
+    
+    
+    
     }
 }
