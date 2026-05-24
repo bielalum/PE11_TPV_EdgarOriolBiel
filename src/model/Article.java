@@ -1,52 +1,36 @@
 package model;
+
 public abstract class Article {
     protected int id;
     protected String nom;
-    protected double preu;
+    protected double preuBase;
+    protected int iva;
     protected int stock;
 
-    public Article(int id, String nom, double preu, int stock){
+    public Article(int id, String nom, double preuBase, int iva, int stock){
         this.id = id;
         this.nom = nom;
-        this.preu = preu;
+        this.preuBase = preuBase;
+        this.iva = iva;
         this.stock = stock;
     }
 
-    public int getId(){
-        return id;
+    public int getId(){ return id; }
+    public void setId(int id){ this.id = id; }
+    public String getNom(){ return nom; }
+    public void setNom(String nom){ this.nom = nom; }
+    public double getPreuBase(){ return preuBase; }
+    public void setPreuBase(double preuBase){ this.preuBase = preuBase; }
+    public int getIva(){ return iva; }
+    public void setIva(int iva){ this.iva = iva; }
+    public int getStock(){ return stock; }
+    public void setStock(int stock){ this.stock = stock; }
+
+    public double calcularPreuFinalUnitari() {
+        return preuBase + (preuBase * iva / 100.0);
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
-
-
-
-    public String getNom(){
-        return nom;
-    }
-
-    public void setNom(String nom){
-        this.nom = nom;
-    }
-
-
-
-    public double getPreu(){
-        return preu;
-    }
-
-    public void setPreu(double preu){
-        this.preu = preu;
-    }
-
-
-
-    public int getStock(){
-        return stock;
-    }
-
-    public void setStock(int stock){
-        this.stock = stock;
-    }
+    public abstract int getIdTipus();
+    @Override
+    public abstract String toString();
 }
