@@ -18,7 +18,7 @@ public class Main {
         Scanner esc = new Scanner(System.in);
         int opcio;
 
-        do{
+        do {
             System.out.println("\n----- MENU PRINCIPAL TPV -----");
             System.out.println("1. Importar articles");
             System.out.println("2. Gestionar articles");
@@ -78,9 +78,9 @@ public class Main {
         System.out.println("Importació finalitzada. Afegits: " + afegits + " | Actualitzats: " + actualitzats);
     }
 
-    public static void menuArticles(Scanner esc){
+    public static void menuArticles(Scanner esc) {
         int opcio;
-        do{
+        do {
             System.out.println("\nGESTIÓ ARTICLES");
             System.out.println("1. Donar d'alta");
             System.out.println("2. Donar de baixa");
@@ -97,7 +97,7 @@ public class Main {
                 case 5: System.out.println("\nTornant al menú principal..."); break;
                 default: System.out.println("ERROR: Opció no vàlida. Tria una entre 1-5");
             }
-        } while (opcio !=5);
+        } while (opcio != 5);
     }
 
     private static void altaArticle(Scanner esc) {
@@ -158,9 +158,9 @@ public class Main {
         for (Article a : articles) System.out.println(a);
     }
 
-    public static void menuClients(Scanner esc){
+    public static void menuClients(Scanner esc) {
         int opcio;
-        do{
+        do {
             System.out.println("\nGESTIÓ CLIENTS");
             System.out.println("1. Donar d'alta");
             System.out.println("2. Donar de baixa");
@@ -177,37 +177,56 @@ public class Main {
                 case 5: System.out.println("\nTornant al menú principal..."); break;
                 default: System.out.println("ERROR: Opció no vàlida. Tria una entre 1-5");
             }
-        } while (opcio !=5);
+        } while (opcio != 5);
     }
 
-    private static void altaClient(Scanner esc) {
-        Client c = demanarClient(esc);
-        if (c != null && DBClients.insertar(c)) System.out.println("Client creat correctament.");
-    }
-
-    private static void modificarClient(Scanner esc) {
-        Client c = demanarClient(esc);
-        if (c != null && DBClients.modificar(c)) System.out.println("Client modificat correctament.");
-    }
-
-    private static Client demanarClient(Scanner esc) {
+    public static void altaClient(Scanner esc) {
+        System.out.println("----- DONAR D'ALTA NOU CLIENT -----");
         System.out.print("DNI: ");
         String dni = esc.nextLine().trim().toUpperCase();
+        
         if (!dni.equals("000") && !validarDniBasic(dni)) {
             System.out.println("ERROR: DNI no vàlid.");
-            return null;
+            return;
         }
-        System.out.print("Nom: ");
+        System.out.print("Nom complet: ");
         String nom = esc.nextLine();
         System.out.print("Email: ");
         String email = esc.nextLine();
         System.out.print("Telèfon: ");
         String telefon = esc.nextLine();
-        return new Client(dni, nom, email, telefon);
+
+        Client nouClient = new Client(dni, nom, email, telefon);
+        if (DBClients.insertar(nouClient)) {
+            System.out.println("Client creat i guardat correctament.");
+        }
     }
 
     private static boolean validarDniBasic(String dni) {
         return dni.matches("^[0-9]{8}[A-Z]$");
+    }
+
+    private static void modificarClient(Scanner esc) {
+        System.out.print("DNI del client a modificar: ");
+        String dni = esc.nextLine().trim().toUpperCase();
+        Client c = DBClients.buscarPerDni(dni);
+        if (c == null) {
+            System.out.println("Client no trobat.");
+            return;
+        }
+        System.out.print("Nou Nom (ENTER per mantenir '" + c.getNom() + "'): ");
+        String nom = esc.nextLine();
+        if (!nom.trim().isEmpty()) c.setNom(nom);
+
+        System.out.print("Nou Email (ENTER per mantenir '" + c.getEmail() + "'): ");
+        String email = esc.nextLine();
+        if (!email.trim().isEmpty()) c.setEmail(email);
+
+        System.out.print("Nou Telèfon (ENTER per mantenir '" + c.getTelefon() + "'): ");
+        String telefon = esc.nextLine();
+        if (!telefon.trim().isEmpty()) c.setTelefon(telefon);
+
+        if (DBClients.modificar(c)) System.out.println("Client modificat correctament.");
     }
 
     private static void baixaClient(Scanner esc) {
@@ -224,7 +243,7 @@ public class Main {
     }
 
     private static void ferVendaTPV(Scanner esc) {
-        System.out.print("Codi client/DNI (si no existeix usa 000): ");
+        System.out.print("Codi client/DNI (si no existeix fes servir 000): ");
         String dni = esc.nextLine().trim().toUpperCase();
         Client client = DBClients.buscarPerDni(dni);
         if (client == null) {
