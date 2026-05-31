@@ -19,9 +19,13 @@ public class DBArticles {
                      "ON DUPLICATE KEY UPDATE nom=VALUES(nom), id_tipus=VALUES(id_tipus), talla_coll=VALUES(talla_coll), " +
                      "amplada_pit=VALUES(amplada_pit), talla_cintura=VALUES(talla_cintura), llargada_camal=VALUES(llargada_camal), " +
                      "preu_base=VALUES(preu_base), iva=VALUES(iva), stock=VALUES(stock)";
-        try (Connection con = Connexio.connectar(); PreparedStatement ps = con.prepareStatement(sql)) {
-            omplirPreparedStatementArticle(ps, article);
-            return ps.executeUpdate() > 0;
+
+        try (Connection con = Connexio.connectar()) {
+            if (con == null) return false;
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                omplirPreparedStatementArticle(ps, article);
+                return ps.executeUpdate() > 0;
+            }
         } catch (SQLException e) {
             System.out.println("ERROR guardant article: " + e.getMessage());
             return false;
@@ -50,17 +54,17 @@ public class DBArticles {
         ps.setInt(3, article.getIdTipus());
 
         if (article instanceof Camisa) {
-            Camisa c = (Camisa) article;
-            ps.setInt(4, c.getTallaColl());
-            ps.setInt(5, c.getAmpladaPit());
+            Camisa camisa = (Camisa) article;
+            ps.setInt(4, camisa.getTallaColl());
+            ps.setInt(5, camisa.getAmpladaPit());
             ps.setNull(6, Types.INTEGER);
             ps.setNull(7, Types.INTEGER);
         } else if (article instanceof Pantalo) {
-            Pantalo p = (Pantalo) article;
+            Pantalo pantalo = (Pantalo) article;
             ps.setNull(4, Types.INTEGER);
             ps.setNull(5, Types.INTEGER);
-            ps.setInt(6, p.getTallaCintura());
-            ps.setInt(7, p.getLlargadaCamal());
+            ps.setInt(6, pantalo.getTallaCintura());
+            ps.setInt(7, pantalo.getLlargadaCamal());
         }
 
         ps.setDouble(8, article.getPreuBase());
@@ -71,10 +75,14 @@ public class DBArticles {
     public static ArrayList<Article> llistarTot() {
         ArrayList<Article> articles = new ArrayList<>();
         String sql = "SELECT * FROM articles ORDER BY id";
-        try (Connection con = Connexio.connectar(); PreparedStatement ps = con.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
-            while (rs.next()) {
-                Article article = crearArticleDesDeResultSet(rs);
-                if (article != null) articles.add(article);
+
+        try (Connection con = Connexio.connectar()) {
+            if (con == null) return articles;
+            try (PreparedStatement ps = con.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Article article = crearArticleDesDeResultSet(rs);
+                    if (article != null) articles.add(article);
+                }
             }
         } catch (SQLException e) {
             System.out.println("ERROR llistant articles: " + e.getMessage());
@@ -84,10 +92,14 @@ public class DBArticles {
 
     public static Article buscarPerId(int id) {
         String sql = "SELECT * FROM articles WHERE id = ?";
-        try (Connection con = Connexio.connectar(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) return crearArticleDesDeResultSet(rs);
+
+        try (Connection con = Connexio.connectar()) {
+            if (con == null) return null;
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setInt(1, id);
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) return crearArticleDesDeResultSet(rs);
+                }
             }
         } catch (SQLException e) {
             System.out.println("ERROR buscant article: " + e.getMessage());
@@ -113,9 +125,13 @@ public class DBArticles {
 
     public static boolean eliminar(int id) {
         String sql = "DELETE FROM articles WHERE id = ?";
-        try (Connection con = Connexio.connectar(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
-            return ps.executeUpdate() > 0;
+
+        try (Connection con = Connexio.connectar()) {
+            if (con == null) return false;
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setInt(1, id);
+                return ps.executeUpdate() > 0;
+            }
         } catch (SQLException e) {
             System.out.println("ERROR eliminant article: " + e.getMessage());
             return false;
@@ -128,10 +144,14 @@ public class DBArticles {
 
     public static boolean actualitzarStock(int idArticle, int nouStock) {
         String sql = "UPDATE articles SET stock = ? WHERE id = ?";
-        try (Connection con = Connexio.connectar(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, nouStock);
-            ps.setInt(2, idArticle);
-            return ps.executeUpdate() > 0;
+
+        try (Connection con = Connexio.connectar()) {
+            if (con == null) return false;
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setInt(1, nouStock);
+                ps.setInt(2, idArticle);
+                return ps.executeUpdate() > 0;
+            }
         } catch (SQLException e) {
             System.out.println("ERROR actualitzant stock: " + e.getMessage());
             return false;

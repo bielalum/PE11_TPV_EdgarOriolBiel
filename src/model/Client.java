@@ -1,29 +1,53 @@
 package model;
 
 public class Client {
-    private String dni;
-    private String nom;
-    private String email;
-    private String telefon;
+    private String dniClient;
+    private String nomComplet;
+    private String correuEmail;
+    private String numeroTelefon;
 
-    public Client(String dni, String nom, String email, String telefon) {
-        this.dni = dni;
-        this.nom = nom;
-        this.email = email;
-        this.telefon = telefon;
+    public Client(String dniClient, String nomComplet, String correuEmail, String numeroTelefon) {
+        this.dniClient = dniClient;
+        this.nomComplet = nomComplet;
+        this.correuEmail = correuEmail;
+        this.numeroTelefon = numeroTelefon;
     }
 
-    public String getDni(){ return dni; }
-    public void setDni(String dni){ this.dni = dni; }
-    public String getNom(){ return nom; }
-    public void setNom(String nom){ this.nom = nom; }
-    public String getEmail(){ return email; }
-    public void setEmail(String email){ this.email = email; }
-    public String getTelefon(){ return telefon; }
-    public void setTelefon(String telefon){ this.telefon = telefon; }
+    public String getDni() { 
+        return dniClient; 
+    }
+    
+    public void setDni(String dniClient) { 
+        this.dniClient = dniClient; 
+    }
+    
+    public String getNom() { 
+        return nomComplet; 
+    }
+    
+    public void setNom(String nomComplet) { 
+        this.nomComplet = nomComplet; 
+    }
+    
+    public String getEmail() { 
+        return correuEmail; 
+    }
+    
+    public void setEmail(String correuEmail) { 
+        this.correuEmail = correuEmail; 
+    }
+    
+    public String getTelefon() { 
+        return numeroTelefon; 
+    }
+    
+    public void setTelefon(String numeroTelefon) { 
+        this.numeroTelefon = numeroTelefon; 
+    }
 
     @Override
     public String toString() {
-        return "Client (DNI: " + dni + ", Nom: " + nom + ", Email: " + email + ", Telèfon: " + telefon + ")";
+        String text = "Client (DNI: " + dniClient + ", Nom: " + nomComplet + ", Email: " + correuEmail + ", Telèfon: " + numeroTelefon + ")";
+        return text;
     }
 }

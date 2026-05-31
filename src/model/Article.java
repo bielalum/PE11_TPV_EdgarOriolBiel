@@ -1,36 +1,67 @@
 package model;
 
 public abstract class Article {
-    protected int id;
-    protected String nom;
+    protected int idArticle;
+    protected String nomArticle;
     protected double preuBase;
-    protected int iva;
-    protected int stock;
+    protected int percentatgeIva;
+    protected int stockActual;
 
-    public Article(int id, String nom, double preuBase, int iva, int stock){
-        this.id = id;
-        this.nom = nom;
+    public Article(int idArticle, String nomArticle, double preuBase, int percentatgeIva, int stockActual) {
+        this.idArticle = idArticle;
+        this.nomArticle = nomArticle;
         this.preuBase = preuBase;
-        this.iva = iva;
-        this.stock = stock;
+        this.percentatgeIva = percentatgeIva;
+        this.stockActual = stockActual;
     }
 
-    public int getId(){ return id; }
-    public void setId(int id){ this.id = id; }
-    public String getNom(){ return nom; }
-    public void setNom(String nom){ this.nom = nom; }
-    public double getPreuBase(){ return preuBase; }
-    public void setPreuBase(double preuBase){ this.preuBase = preuBase; }
-    public int getIva(){ return iva; }
-    public void setIva(int iva){ this.iva = iva; }
-    public int getStock(){ return stock; }
-    public void setStock(int stock){ this.stock = stock; }
+    public int getId() { 
+        return idArticle; 
+    }
+    
+    public void setId(int idArticle) { 
+        this.idArticle = idArticle; 
+    }
+    
+    public String getNom() { 
+        return nomArticle; 
+    }
+    
+    public void setNom(String nomArticle) { 
+        this.nomArticle = nomArticle; 
+    }
+    
+    public double getPreuBase() { 
+        return preuBase; 
+    }
+    
+    public void setPreuBase(double preuBase) { 
+        this.preuBase = preuBase; 
+    }
+    
+    public int getIva() { 
+        return percentatgeIva; 
+    }
+    
+    public void setIva(int percentatgeIva) { 
+        this.percentatgeIva = percentatgeIva; 
+    }
+    
+    public int getStock() { 
+        return stockActual; 
+    }
+    
+    public void setStock(int stockActual) { 
+        this.stockActual = stockActual; 
+    }
 
     public double calcularPreuFinalUnitari() {
-        return preuBase + (preuBase * iva / 100.0);
+        double preuFinal = this.preuBase + (this.preuBase * this.percentatgeIva / 100.0);
+        return preuFinal;
     }
 
     public abstract int getIdTipus();
+    
     @Override
     public abstract String toString();
 }
