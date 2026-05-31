@@ -1,0 +1,490 @@
+[
+  {
+    "id": 1,
+    "nom": "Camisa Test 1",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 2,
+    "nom": "Camisa Test 2",
+    "familia": "camisa",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 3,
+    "nom": "Camisa Test 3",
+    "familia": "camisa",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 4,
+    "nom": "Camisa Test 4",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 5,
+    "nom": "Camisa Test 5",
+    "familia": "camisa",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 6,
+    "nom": "Camisa Test 6",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 7,
+    "nom": "Camisa Test 7",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 8,
+    "nom": "Camisa Test 8",
+    "familia": "camisa",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 9,
+    "nom": "Camisa Test 9",
+    "familia": "camisa",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 10,
+    "nom": "Camisa Test 10",
+    "familia": "camisa",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 11,
+    "nom": "Camisa Test 11",
+    "familia": "camisa",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 12,
+    "nom": "Camisa Test 12",
+    "familia": "camisa",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 13,
+    "nom": "Camisa Test 13",
+    "familia": "camisa",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 14,
+    "nom": "Camisa Test 14",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 15,
+    "nom": "Camisa Test 15",
+    "familia": "camisa",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 16,
+    "nom": "Camisa Test 16",
+    "familia": "camisa",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 17,
+    "nom": "Camisa Test 17",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 18,
+    "nom": "Camisa Test 18",
+    "familia": "camisa",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 19,
+    "nom": "Camisa Test 19",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 20,
+    "nom": "Camisa Test 20",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 21,
+    "nom": "Camisa Test 21",
+    "familia": "camisa",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 22,
+    "nom": "Camisa Test 22",
+    "familia": "camisa",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 23,
+    "nom": "Camisa Test 23",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 24,
+    "nom": "Camisa Test 24",
+    "familia": "camisa",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 25,
+    "nom": "Camisa Test 25",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 26,
+    "nom": "Camisa Test 26",
+    "familia": "camisa",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 27,
+    "nom": "Camisa Test 27",
+    "familia": "camisa",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 28,
+    "nom": "Camisa Test 28",
+    "familia": "camisa",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 29,
+    "nom": "Camisa Test 29",
+    "familia": "camisa",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 30,
+    "nom": "Camisa Test 30",
+    "familia": "camisa",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 31,
+    "nom": "Pantaló Test 31",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 32,
+    "nom": "Pantaló Test 32",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 33,
+    "nom": "Pantaló Test 33",
+    "familia": "pantaló",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 34,
+    "nom": "Pantaló Test 34",
+    "familia": "pantaló",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 35,
+    "nom": "Pantaló Test 35",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 36,
+    "nom": "Pantaló Test 36",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 37,
+    "nom": "Pantaló Test 37",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 38,
+    "nom": "Pantaló Test 38",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 39,
+    "nom": "Pantaló Test 39",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 40,
+    "nom": "Pantaló Test 40",
+    "familia": "pantaló",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 41,
+    "nom": "Pantaló Test 41",
+    "familia": "pantaló",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 42,
+    "nom": "Pantaló Test 42",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 43,
+    "nom": "Pantaló Test 43",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 44,
+    "nom": "Pantaló Test 44",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 45,
+    "nom": "Pantaló Test 45",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 46,
+    "nom": "Pantaló Test 46",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 47,
+    "nom": "Pantaló Test 47",
+    "familia": "pantaló",
+    "stock_actual": 4,
+    "unitats_recompra": 36,
+    "stock_final": 40
+  },
+  {
+    "id": 48,
+    "nom": "Pantaló Test 48",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 49,
+    "nom": "Pantaló Test 49",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 50,
+    "nom": "Pantaló Test 50",
+    "familia": "pantaló",
+    "stock_actual": 5,
+    "unitats_recompra": 35,
+    "stock_final": 40
+  },
+  {
+    "id": 51,
+    "nom": "Pantaló Test 51",
+    "familia": "pantaló",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 52,
+    "nom": "Pantaló Test 52",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 53,
+    "nom": "Pantaló Test 53",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 54,
+    "nom": "Pantaló Test 54",
+    "familia": "pantaló",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 55,
+    "nom": "Pantaló Test 55",
+    "familia": "pantaló",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 56,
+    "nom": "Pantaló Test 56",
+    "familia": "pantaló",
+    "stock_actual": 1,
+    "unitats_recompra": 39,
+    "stock_final": 40
+  },
+  {
+    "id": 57,
+    "nom": "Pantaló Test 57",
+    "familia": "pantaló",
+    "stock_actual": 0,
+    "unitats_recompra": 40,
+    "stock_final": 40
+  },
+  {
+    "id": 58,
+    "nom": "Pantaló Test 58",
+    "familia": "pantaló",
+    "stock_actual": 2,
+    "unitats_recompra": 38,
+    "stock_final": 40
+  },
+  {
+    "id": 59,
+    "nom": "Pantaló Test 59",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 60,
+    "nom": "Pantaló Test 60",
+    "familia": "pantaló",
+    "stock_actual": 3,
+    "unitats_recompra": 37,
+    "stock_final": 40
+  },
+  {
+    "id": 1234,
+    "nom": "Biel",
+    "familia": "pantaló",
+    "stock_actual": 10,
+    "unitats_recompra": 30,
+    "stock_final": 40
+  }
+]

@@ -7,17 +7,15 @@ import java.sql.SQLException;
 public class Connexio {
     private static final String URL = "jdbc:mysql://localhost:3306/tpv_botiga";
     private static final String USER = "root";
-    private static final String PASSWORD = ""; 
+    private static final String PASSWORD = "";
 
-    public static Connection conectar() {
-        Connection conexion = null;
+    public static Connection connectar() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Connexió establerta!");
+            return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error en la connexió: " + e.getMessage());
+            return null;
         }
-        return conexion;
     }
 }
